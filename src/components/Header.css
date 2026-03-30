@@ -1,0 +1,116 @@
+/* Soumyajit-liknande: mörk lila bar, glas, lila accent vid hover */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 20px 20px;
+  text-align: center;
+  color: var(--text-h);
+  background: rgba(12, 5, 24, 0.78);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme='light'] .header {
+  color: var(--text-h);
+  background: rgba(250, 245, 255, 0.88);
+  border-bottom-color: rgba(147, 51, 234, 0.22);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header-brand {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+html[data-theme='light'] .header h1 {
+  color: var(--text-h);
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+html[data-theme='light'] .header p {
+  color: var(--text-muted);
+}
+
+.header-nav {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px 18px;
+  flex-wrap: wrap;
+}
+
+.header-nav li {
+  font-weight: 600;
+}
+
+.header-link {
+  color: var(--text-h);
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+html[data-theme='light'] .header-link {
+  color: var(--text-h);
+}
+
+.header-link:hover {
+  color: var(--accent-bright);
+  background: var(--accent-bg);
+}
+
+html[data-theme='light'] .header-link:hover {
+  color: var(--accent-deep);
+  background: rgba(233, 213, 255, 0.75);
+}
+
+.header-link--active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--accent);
+}
+
+html[data-theme='light'] .header-link--active {
+  color: var(--accent-deep);
+}
+
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-brand {
+    width: 100%;
+    text-align: center;
+  }
+}

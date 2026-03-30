@@ -1,0 +1,124 @@
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 4px;
+  margin-top: 12px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.excavator-wrapper {
+  position: relative;
+  width: 148px;
+  height: 110px;
+}
+
+.excavator-body {
+  position: absolute;
+  bottom: 28px;
+  width: 58px;
+  height: 36px;
+  background: #ffcc00;
+  border: 3px solid #333;
+  z-index: 2;
+}
+
+.cabin {
+  position: absolute;
+  top: -22px;
+  left: 8px;
+  width: 28px;
+  height: 22px;
+  background: #87ceeb;
+  border: 3px solid #333;
+}
+
+.arm-joint {
+  position: absolute;
+  top: 8px;
+  right: -8px;
+  width: 11px;
+  height: 11px;
+  background: #333;
+  border-radius: 50%;
+}
+
+.arm-main {
+  position: absolute;
+  width: 58px;
+  height: 9px;
+  background: #ffcc00;
+  border: 2px solid #333;
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  animation: dig 3s infinite ease-in-out;
+}
+
+.arm-bucket {
+  position: absolute;
+  right: -18px;
+  top: -8px;
+  width: 22px;
+  height: 22px;
+  background: #555;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+}
+
+.tracks {
+  position: absolute;
+  bottom: 14px;
+  width: 72px;
+  height: 14px;
+  background: #333;
+  border-radius: 7px;
+}
+
+@keyframes dig {
+  0%,
+  100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+/*
+  Måste slå .section-project h2 i App.css (som satte 2rem och dolde mindre storlek).
+*/
+.section-project h2.loading-text {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: var(--text-h);
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.loading-dot {
+  animation: blink 1.5s infinite;
+  opacity: 0;
+}
+
+.loading-dot.d2 {
+  animation-delay: 0.2s;
+}
+
+.loading-dot.d3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

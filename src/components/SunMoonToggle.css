@@ -1,0 +1,86 @@
+/* From Uiverse.io by rishichawda */
+/* The switch - the box around the slider */
+#theme-toggle-button {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 7em;
+  cursor: pointer;
+}
+
+/* Hide default HTML checkbox */
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: opacity, fill, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
+}
+
+/* Dag: ljus himmel (behövs eftersom vi bara har :checked för natt) */
+#theme-toggle-button svg #container {
+  fill: #87ceeb;
+}
+
+/*
+  Vi använder ~ istället för + så det funkar även om React lägger in
+  mellanrum (text-noder) mellan input och svg.
+*/
+/* night sky background */
+#toggle:checked ~ svg #container {
+  fill: #2b4360;
+}
+
+/* Knappen vänster i ljust läge, höger i mörkt läge */
+/* 28px räckte inte för vår SVG – då hamnade knappen i mitten av spåret */
+#theme-toggle-button svg #button {
+  transform: translate(0, 0);
+}
+
+#toggle:checked ~ svg #button {
+  transform: translate(64px, 0);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked ~ svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked ~ svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked ~ svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked ~ svg #stars {
+  opacity: 1;
+}

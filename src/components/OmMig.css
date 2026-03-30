@@ -1,0 +1,267 @@
+/* Soumyajit-stil: mörk bakgrund, gradientrubriker, skill-pills, verktyg, aktivitetsrutnät */
+.om-mig {
+  padding: 24px 20px 56px;
+  text-align: left;
+}
+
+.om-mig-page-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.5px;
+  /* line-height > 1 gives the background paint room above and below the glyphs */
+  line-height: 1.5;
+  width: fit-content;
+  margin: 0 auto 28px;
+  padding: 0 0.5em;
+  background: var(--gradient-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.om-mig-intro-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 40px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+.om-mig-avatar-wrap {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--accent-border);
+  background: #8b3a2a;
+  box-shadow: 0 8px 28px rgba(147, 51, 234, 0.2);
+}
+
+.om-mig-avatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* contain shows the full image without cropping */
+  object-fit: contain;
+  object-position: center center;
+  image-rendering: pixelated;
+}
+
+.om-mig-intro-text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.om-mig-paragraph {
+  margin: 0 0 14px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.om-mig-lead {
+  margin: 18px 0 10px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.om-mig-hobby-list {
+  margin: 0 0 20px;
+  padding-left: 22px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.om-mig-emoji {
+  font-style: normal;
+}
+
+.om-mig-quote {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border-left: 4px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--accent-bg);
+  font-style: italic;
+  color: var(--text-h);
+}
+
+.om-mig-training {
+  padding-top: 4px;
+}
+
+.om-mig-training-title {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-family: var(--mono);
+  color: var(--accent-bright);
+}
+
+.om-mig-training-list {
+  margin: 0;
+  padding-left: 22px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.om-mig-section {
+  margin-bottom: 40px;
+}
+
+.om-mig-section-title {
+  font-size: 1.35rem;
+  margin: 0 0 16px;
+  color: var(--text-h);
+  text-align: center;
+}
+
+.om-mig-skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.om-mig-skill-pill {
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid var(--accent-border);
+  background: linear-gradient(
+    145deg,
+    rgba(147, 51, 234, 0.18) 0%,
+    rgba(59, 7, 100, 0.35) 100%
+  );
+  color: var(--text-h);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='light'] .om-mig-skill-pill {
+  background: linear-gradient(
+    145deg,
+    rgba(233, 213, 255, 0.9) 0%,
+    rgba(250, 245, 255, 0.95) 100%
+  );
+  color: var(--text-h);
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.12);
+}
+
+.om-mig-tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.om-mig-tool-chip {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(147, 51, 234, 0.08);
+  color: var(--text);
+  font-weight: 500;
+}
+
+html[data-theme='light'] .om-mig-tool-chip {
+  background: rgba(233, 213, 255, 0.5);
+}
+
+.om-mig-activity-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+}
+
+html[data-theme='light'] .om-mig-activity-grid {
+  background: rgba(233, 213, 255, 0.35);
+}
+
+.om-mig-activity-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 500px;
+}
+
+.om-mig-day-label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  width: 28px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.om-mig-activity-cells {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+/* Hour labels row */
+.om-mig-hour-label {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* level-0: off / no coding */
+.om-mig-activity-cell {
+  flex: 1;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: rgba(147, 51, 234, 0.08);
+  border: 1px solid rgba(147, 51, 234, 0.12);
+}
+
+/* level-2: Sunday – low brightness */
+.om-mig-activity-cell.level-2 {
+  background: rgba(199, 112, 240, 0.32);
+  border-color: rgba(199, 112, 240, 0.35);
+  box-shadow: 0 0 5px rgba(199, 112, 240, 0.22);
+}
+
+/* level-3: Mon–Fri – brightest */
+.om-mig-activity-cell.level-3 {
+  background: rgba(232, 121, 249, 0.72);
+  border-color: rgba(232, 121, 249, 0.65);
+  box-shadow:
+    0 0 7px rgba(232, 121, 249, 0.55),
+    0 0 14px rgba(199, 112, 240, 0.3);
+}
+
+@media (max-width: 768px) {
+  .om-mig-intro-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .om-mig-intro-text {
+    text-align: left;
+  }
+
+  .om-mig-avatar-wrap {
+    width: 180px;
+    height: 180px;
+  }
+}
