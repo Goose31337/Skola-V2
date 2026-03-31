@@ -1,11 +1,11 @@
 import data from '../data'
 import './Socials.css'
 
-function Socials() {
+function Socials({ socialsText }) {
   return (
     <section id="socials" className="socials page-route">
-      <h2>Socials</h2>
-      <p className="socials-intro">Här kan du nå mig på sociala medier.</p>
+      <h2>{socialsText.title}</h2>
+      <p className="socials-intro">{socialsText.intro}</p>
 
       <ul className="socials-list">
         <li>

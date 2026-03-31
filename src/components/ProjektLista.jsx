@@ -1,10 +1,10 @@
 import WorkInProgress from './WorkInProgress'
 
-function ProjektLista() {
+function ProjektLista({ projectText }) {
   return (
     <section id="projekt" className="page-route section-project">
-      <h2>Projekt</h2>
-      <p>Här kommer mina projekt att visas senare.</p>
+      <h2>{projectText.title}</h2>
+      <p>{projectText.text}</p>
       <WorkInProgress />
     </section>
   )

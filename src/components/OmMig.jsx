@@ -1,9 +1,11 @@
 import data from '../data'
 import avatarImg from '../assets/profile.png'
 import './OmMig.css'
+import translations from '../translations'
 
-function OmMig() {
-  const { omMig } = data
+function OmMig({ lang }) {
+  const t = translations[lang]
+  const omMig = t.data.omMig
 
   return (
     <section id="om-mig" className="om-mig page-route">
@@ -46,7 +48,7 @@ function OmMig() {
           </ul>
           <blockquote className="om-mig-quote">&ldquo;{omMig.quote}&rdquo;</blockquote>
           <div className="om-mig-training">
-            <h3 className="om-mig-training-title">Just nu tränar jag på</h3>
+            <h3 className="om-mig-training-title">{t.about.trainingTitle}</h3>
             <ul className="om-mig-training-list">
               {omMig.trainingBullets.map(function (line) {
                 return <li key={line}>{line}</li>
@@ -95,13 +97,13 @@ function OmMig() {
           const HOURS = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
 
           const DAYS = [
-            { name: 'Mån', type: 'weekday' },
-            { name: 'Tis', type: 'weekday' },
-            { name: 'Ons', type: 'weekday' },
-            { name: 'Tor', type: 'weekday' },
-            { name: 'Fre', type: 'weekday' },
-            { name: 'Lör', type: 'saturday' },
-            { name: 'Sön', type: 'sunday' },
+            { name: t.about.days[0], type: 'weekday' },
+            { name: t.about.days[1], type: 'weekday' },
+            { name: t.about.days[2], type: 'weekday' },
+            { name: t.about.days[3], type: 'weekday' },
+            { name: t.about.days[4], type: 'weekday' },
+            { name: t.about.days[5], type: 'saturday' },
+            { name: t.about.days[6], type: 'sunday' },
           ]
 
           function getLevel(dayType, hour) {

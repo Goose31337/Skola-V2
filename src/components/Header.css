@@ -34,6 +34,36 @@ html[data-theme='light'] .header {
   text-align: left;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.lang-btn--active {
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
 .header h1 {
   margin: 0;
   font-size: 28px;
@@ -112,5 +142,10 @@ html[data-theme='light'] .header-link--active {
   .header-brand {
     width: 100%;
     text-align: center;
+  }
+
+  .header-controls {
+    justify-content: center;
+    width: 100%;
   }
 }

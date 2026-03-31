@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import homeMain from '../assets/home-main.svg'
 import './Hero.css'
 
-function Hero({ titel, beskrivning }) {
+function Hero({ titel, beskrivning, buttonText }) {
   return (
     <section id="hero" className="hero">
       <span className="hero-shape hero-shape-1" />
@@ -14,7 +14,7 @@ function Hero({ titel, beskrivning }) {
             <h2 className="hero-title gradient-heading">{titel}</h2>
             <p className="hero-text">{beskrivning}</p>
             <Link className="hero-button" to="/projekt">
-              Se mina projekt
+              {buttonText}
             </Link>
           </div>
           <div className="hero-art">

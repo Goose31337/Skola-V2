@@ -10,6 +10,7 @@ import OmMig from './components/OmMig'
 import Socials from './components/Socials'
 import IntroLanding from './components/IntroLanding'
 import data from './data'
+import translations from './translations'
 
 function getSavedTheme() {
   const saved = localStorage.getItem('theme')
@@ -26,11 +27,20 @@ function App() {
   const [theme, setTheme] = useState(function () {
     return getSavedTheme()
   })
+  const [lang, setLang] = useState(function () {
+    const saved = localStorage.getItem('lang')
+    return saved === 'en' ? 'en' : 'sv'
+  })
+  const t = translations[lang]
 
   useEffect(function () {
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem('theme', theme)
   }, [theme])
+
+  useEffect(function () {
+    localStorage.setItem('lang', lang)
+  }, [lang])
 
   function handleThemeToggle(isDark) {
     if (isDark) {
@@ -59,9 +69,11 @@ function App() {
 
       <Header
         namn={data.namn}
-        titel={data.titel}
         isDark={theme === 'dark'}
         onThemeToggle={handleThemeToggle}
+        lang={lang}
+        onLangChange={setLang}
+        navLabels={t.nav}
       />
 
       <main className="main">
@@ -71,24 +83,28 @@ function App() {
             element={
               <div className="home-stack">
                 {/* Intro section first, current homepage content below */}
-                <IntroLanding />
+                <IntroLanding introText={t.intro} />
                 <section id="home-content" className="home-content">
-                  <Hero titel={data.titel} beskrivning={data.beskrivning} />
+                  <Hero
+                    titel={t.data.title}
+                    beskrivning={t.data.description}
+                    buttonText={t.hero.button}
+                  />
                 </section>
               </div>
             }
           />
-          <Route path="/projekt" element={<ProjektLista />} />
+          <Route path="/projekt" element={<ProjektLista projectText={t.project} />} />
           <Route
             path="/kontakt"
-            element={<Kontakt email={data.email} telefon={data.telefon} />}
+            element={<Kontakt email={data.email} telefon={data.telefon} contactText={t.contact} />}
           />
-          <Route path="/socials" element={<Socials />} />
-          <Route path="/om-mig" element={<OmMig />} />
+          <Route path="/socials" element={<Socials socialsText={t.socials} />} />
+          <Route path="/om-mig" element={<OmMig lang={lang} />} />
         </Routes>
       </main>
 
-      <Footer namn={data.namn} />
+      <Footer namn={data.namn} footerText={t.footer} />
     </div>
   )
 }

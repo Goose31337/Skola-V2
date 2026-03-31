@@ -1,12 +1,16 @@
 import './Footer.css'
 
-function Footer({ namn }) {
+function Footer({ namn, footerText }) {
   const year = new Date().getFullYear()
 
   return (
     <footer className="footer">
-      <p className="footer-line">Designad och utvecklad av {namn}</p>
-      <p className="footer-copy">Upphovsrätt © {year} {namn}</p>
+      <p className="footer-line">
+        {footerText.builtBy} {namn}
+      </p>
+      <p className="footer-copy">
+        {footerText.copyright} © {year} {namn}
+      </p>
     </footer>
   )
 }
