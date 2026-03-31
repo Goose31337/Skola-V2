@@ -1,6 +1,6 @@
 .intro-landing {
   position: relative;
-  min-height: 100svh;
+  min-height: calc(100svh - 118px);
   width: 100%;
   display: grid;
   place-items: center;
@@ -38,6 +38,7 @@ html[data-theme='light'] .intro-overlay {
   z-index: 1;
   width: min(760px, calc(100% - 48px));
   text-align: center;
+  margin-top: -64px;
 }
 
 .intro-kicker {
@@ -66,7 +67,7 @@ html[data-theme='light'] .intro-overlay {
 
 .intro-scroll-hint {
   position: absolute;
-  bottom: 28px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   letter-spacing: 0.24em;
@@ -75,8 +76,13 @@ html[data-theme='light'] .intro-overlay {
 }
 
 @media (max-width: 768px) {
+  .intro-landing {
+    min-height: calc(100svh - 142px);
+  }
+
   .intro-content {
     width: calc(100% - 28px);
+    margin-top: -40px;
   }
 
   .intro-text {
