@@ -1,5 +1,8 @@
 .page {
   position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Lila glöd som följer musen (Soumyajit-liknande accent) */
@@ -30,6 +33,15 @@ html[data-theme='light'] .mouse-light {
   padding: 0;
   flex: 1;
   width: 100%;
+}
+
+.home-stack {
+  width: 100%;
+}
+
+.home-content {
+  width: 100%;
+  padding-top: 10px;
 }
 
 /* Undersidor (Projekt, Kontakt, Om mig): luft under headern */

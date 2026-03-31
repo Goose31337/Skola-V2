@@ -1,52 +1,71 @@
 .kontakt {
   margin-top: 0;
-  padding: 0;
+  padding: 28px 20px 56px;
 }
 
 .kontakt-box {
-  max-width: 720px;
+  max-width: 940px;
   margin: 0 auto;
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  text-align: left;
+  padding: 34px 26px 28px;
+  border: 1px solid rgba(147, 51, 234, 0.16);
+  border-radius: 18px;
+  text-align: center;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.06);
   box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.12),
-    0 0 0 1px rgba(147, 51, 234, 0.12);
+    0 8px 22px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(147, 51, 234, 0.1);
 }
 
 html[data-theme='light'] .kontakt-box {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.8);
   box-shadow:
-    0 4px 16px rgba(124, 58, 237, 0.1),
-    0 0 0 1px rgba(147, 51, 234, 0.12);
+    0 6px 22px rgba(124, 58, 237, 0.09),
+    0 0 0 1px rgba(147, 51, 234, 0.1);
 }
 
-.kontakt-text {
-  margin-bottom: 16px;
+.kontakt-subtitle {
+  margin: 10px 0 28px;
+  color: var(--text-muted);
 }
 
-.kontakt-availability {
-  margin: 16px 0 20px;
-  padding: 12px;
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 1.4fr;
+  gap: 16px 22px;
+  align-items: start;
+}
+
+.kontakt-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kontakt-info-item {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: var(--accent-bg);
+  background: rgba(0, 0, 0, 0.12);
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  box-sizing: border-box;
 }
 
-.kontakt-availability h3 {
-  margin: 0 0 8px;
+html[data-theme='light'] .kontakt-info-item {
+  background: rgba(255, 255, 255, 0.86);
 }
 
-.kontakt-availability p {
-  margin: 4px 0;
+a.kontakt-info-item:hover {
+  border-color: var(--accent-border);
 }
 
 .kontakt-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
@@ -63,12 +82,14 @@ html[data-theme='light'] .kontakt-box {
 }
 
 .kontakt-textarea {
+  grid-column: 1 / -1;
   resize: vertical;
-  min-height: 140px;
+  min-height: 130px;
 }
 
 .kontakt-button {
-  align-self: flex-start;
+  grid-column: 1 / -1;
+  width: 100%;
   padding: 10px 18px;
   border-radius: 10px;
   border: 1px solid var(--accent-border);
@@ -84,4 +105,24 @@ html[data-theme='light'] .kontakt-box {
 .kontakt-button:hover {
   filter: brightness(1.05);
   box-shadow: 0 0 14px rgba(199, 112, 240, 0.3);
+}
+
+@media (max-width: 900px) {
+  .kontakt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .kontakt {
+    padding: 22px 14px 44px;
+  }
+
+  .kontakt-box {
+    padding: 24px 16px 18px;
+  }
+
+  .kontakt-form {
+    grid-template-columns: 1fr;
+  }
 }

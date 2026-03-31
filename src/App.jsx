@@ -8,6 +8,7 @@ import Hero from './components/Hero'
 import ProjektLista from './components/ProjektLista'
 import OmMig from './components/OmMig'
 import Socials from './components/Socials'
+import IntroLanding from './components/IntroLanding'
 import data from './data'
 
 function getSavedTheme() {
@@ -67,7 +68,15 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Hero titel={data.titel} beskrivning={data.beskrivning} />}
+            element={
+              <div className="home-stack">
+                {/* Intro section first, current homepage content below */}
+                <IntroLanding />
+                <section id="home-content" className="home-content">
+                  <Hero titel={data.titel} beskrivning={data.beskrivning} />
+                </section>
+              </div>
+            }
           />
           <Route path="/projekt" element={<ProjektLista />} />
           <Route

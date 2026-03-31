@@ -5,32 +5,34 @@ function Kontakt({ email, telefon }) {
     <section id="kontakt" className="kontakt page-route">
       <div className="kontakt-box">
         <h2>Kontakt</h2>
-        <p className="kontakt-text">
-          Hör av dig så hör jag av mig! Email:{' '}
-          <a href={'mailto:' + email}>{email}</a>
-        </p>
-        <p className="kontakt-text">
-          Telefonnummer: <a href={'tel:' + telefon}>{telefon}</a>
-        </p>
+        <p className="kontakt-subtitle">Hör av dig så hör jag av mig!</p>
 
-        <div className="kontakt-availability">
-          <h3>Tillgänglighet</h3>
-          <p>Måndag - Fredag: 10.00 - 12.00 (tillgänglig)</p>
-          <p>Lördag - Söndag: Ej tillgänglig</p>
+        <div className="kontakt-grid">
+          {/* Left column: quick contact info boxes */}
+          <div className="kontakt-info-list">
+            <a className="kontakt-info-item" href={'mailto:' + email}>
+              {email}
+            </a>
+            <a className="kontakt-info-item" href={'tel:' + telefon}>
+              {telefon}
+            </a>
+            <div className="kontakt-info-item">Helsingborg, Sverige</div>
+          </div>
+
+          {/* Right column: simple contact form */}
+          <form className="kontakt-form">
+            <input className="kontakt-input" type="text" placeholder="Ditt namn" />
+            <input className="kontakt-input" type="email" placeholder="Din e-post" />
+            <textarea
+              className="kontakt-textarea"
+              placeholder="Ditt meddelande"
+              rows="5"
+            />
+            <button className="kontakt-button" type="submit">
+              Skicka
+            </button>
+          </form>
         </div>
-
-        <form className="kontakt-form">
-          <input className="kontakt-input" type="text" placeholder="Ditt Namn" />
-          <input className="kontakt-input" type="email" placeholder="Din E-post" />
-          <textarea
-            className="kontakt-textarea"
-            placeholder="Ditt Meddelande"
-            rows="5"
-          />
-          <button className="kontakt-button" type="submit">
-            Skicka
-          </button>
-        </form>
       </div>
     </section>
   )
