@@ -9,7 +9,6 @@ function IntroLanding() {
       <span className="intro-shape intro-shape-3" />
       <div className="intro-overlay" />
       <div className="intro-content">
-        <p className="intro-kicker">Creative Portfolio</p>
         <h2 className="intro-title">Skapa. Bygg. Inspirera.</h2>
         <p className="intro-text">"Vision without execution is hallucination."</p>
         <p className="intro-quote-author">- Thomas Edison</p>
