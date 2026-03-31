@@ -63,6 +63,15 @@ html[data-theme='light'] .intro-overlay {
   max-width: 560px;
   color: rgba(233, 213, 255, 0.85);
   font-size: 1.05rem;
+  font-style: italic;
+}
+
+.intro-quote-author {
+  margin-top: 8px;
+  color: rgba(233, 213, 255, 0.7);
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .intro-scroll-hint {

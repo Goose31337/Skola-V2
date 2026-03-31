@@ -8,9 +8,8 @@ function IntroLanding() {
       <div className="intro-content">
         <p className="intro-kicker">Creative Portfolio</p>
         <h2 className="intro-title">Skapa. Bygg. Inspirera.</h2>
-        <p className="intro-text">
-          En stark startsektion som leder ner till din nuvarande hemsida.
-        </p>
+        <p className="intro-text">"Vision without execution is hallucination."</p>
+        <p className="intro-quote-author">- Thomas Edison</p>
       </div>
       <div className="intro-scroll-hint" aria-hidden="true">
         SCROLL TO SEE MORE
