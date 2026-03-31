@@ -42,6 +42,19 @@ html[data-theme='light'] .kontakt-box {
   gap: 14px;
 }
 
+.kontakt-info-row {
+  text-align: left;
+}
+
+.kontakt-info-heading {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .kontakt-info-item {
   display: block;
   width: 100%;

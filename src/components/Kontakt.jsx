@@ -10,13 +10,22 @@ function Kontakt({ email, telefon }) {
         <div className="kontakt-grid">
           {/* Left column: quick contact info boxes */}
           <div className="kontakt-info-list">
-            <a className="kontakt-info-item" href={'mailto:' + email}>
-              {email}
-            </a>
-            <a className="kontakt-info-item" href={'tel:' + telefon}>
-              {telefon}
-            </a>
-            <div className="kontakt-info-item">Helsingborg, Sverige</div>
+            <div className="kontakt-info-row">
+              <p className="kontakt-info-heading">Email:</p>
+              <a className="kontakt-info-item" href={'mailto:' + email}>
+                {email}
+              </a>
+            </div>
+            <div className="kontakt-info-row">
+              <p className="kontakt-info-heading">Telefonnummer:</p>
+              <a className="kontakt-info-item" href={'tel:' + telefon}>
+                {telefon}
+              </a>
+            </div>
+            <div className="kontakt-info-row">
+              <p className="kontakt-info-heading">Plats:</p>
+              <div className="kontakt-info-item">Helsingborg, Sverige</div>
+            </div>
           </div>
 
           {/* Right column: simple contact form */}
