@@ -89,3 +89,9 @@ html[data-theme='dark'] .section-project {
   padding: 0;
   margin: 12px 0 0;
 }
+
+@media (max-width: 768px) {
+  .page-route {
+    padding: 20px 14px 40px;
+  }
+}

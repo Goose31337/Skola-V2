@@ -173,12 +173,12 @@ html[data-theme='light'] .intro-shape {
 
 @media (max-width: 768px) {
   .intro-landing {
-    min-height: calc(100svh - 142px);
+    min-height: calc(100svh - 114px);
   }
 
   .intro-content {
     width: calc(100% - 28px);
-    margin-top: -40px;
+    margin-top: -16px;
   }
 
   .intro-text {
@@ -193,5 +193,25 @@ html[data-theme='light'] .intro-shape {
   .intro-shape-2 {
     width: 46px;
     height: 46px;
+  }
+
+  .intro-scroll-hint {
+    bottom: 10px;
+    letter-spacing: 0.16em;
+    font-size: 0.64rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .intro-title {
+    font-size: clamp(1.9rem, 11vw, 3rem);
+  }
+
+  .intro-text {
+    font-size: 0.9rem;
+  }
+
+  .intro-quote-author {
+    font-size: 0.82rem;
   }
 }
