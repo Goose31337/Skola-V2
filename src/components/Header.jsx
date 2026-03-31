@@ -8,7 +8,6 @@ function Header({ namn, titel, isDark, onThemeToggle }) {
       <div className="header-top">
         <div className="header-brand">
           <h1 className="header-logo">{namn}</h1>
-          <p className="header-title">{titel}</p>
         </div>
         <ThemeToggle isDark={isDark} onChange={onThemeToggle} />
       </div>
