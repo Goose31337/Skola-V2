@@ -10,6 +10,7 @@ function Header({ namn, isDark, onThemeToggle, lang, onLangChange, navLabels }) 
           <h1 className="header-logo">{namn}</h1>
         </div>
         <div className="header-controls">
+          <ThemeToggle isDark={isDark} onChange={onThemeToggle} />
           <div className="lang-switch" aria-label="Language switch">
             <button
               type="button"
@@ -30,7 +31,6 @@ function Header({ namn, isDark, onThemeToggle, lang, onLangChange, navLabels }) 
               EN
             </button>
           </div>
-          <ThemeToggle isDark={isDark} onChange={onThemeToggle} />
         </div>
       </div>
 
